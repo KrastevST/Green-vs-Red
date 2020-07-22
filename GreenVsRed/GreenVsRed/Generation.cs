@@ -6,11 +6,11 @@ namespace GreenVsRed
     {
         private int x;
         private int y;
-        private int[][] grid;
+        private int[,] grid;
         private int x1;
         private int y1;
 
-        public Generation(int x, int y, int[][] genZero, int x1, int y1)
+        public Generation(int x, int y, int[,] genZero, int x1, int y1)
         {
             this.x = x;
             this.y = y;

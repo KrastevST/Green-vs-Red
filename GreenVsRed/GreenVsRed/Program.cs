@@ -6,7 +6,7 @@ namespace GreenVsRed
     {
         static void Main()
         {
-            string[] firstLine = Console.ReadLine().Trim().Split();
+            string[] firstLine = Console.ReadLine().Split(new[] { ',', ' '}, StringSplitOptions.RemoveEmptyEntries);
             int x = int.Parse(firstLine[0]);
             int y = int.Parse(firstLine[1]);
 

@@ -2,9 +2,9 @@
 
 namespace GreenVsRed
 {
-    public class GenerationFactory
+    public class GameFactory
     {
-        public Generation CreateGeneration()
+        public Game NewGame()
         {
             string[] firstLine = Console.ReadLine().Split(new[] { ',', ' '}, StringSplitOptions.RemoveEmptyEntries);
             int x = int.Parse(firstLine[0]);
@@ -26,7 +26,7 @@ namespace GreenVsRed
             int turns = int.Parse(lastLine[2]);
 
 
-            return new Generation(x, y, grid, x1, y1, turns);
+            return new Game(x, y, grid, x1, y1, turns);
         }
     }
 }

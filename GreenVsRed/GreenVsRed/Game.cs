@@ -24,6 +24,14 @@ namespace GreenVsRed
             this.turns = turns;
         }
 
+        public void Run()
+        {
+            for (int i = 0; i < this.turns; i++)
+            {
+
+            }
+        }
+
         private void nextTurn()
         {
             int[,] nextGrid = new int[x, y];

@@ -7,7 +7,8 @@ namespace GreenVsRed
         static void Main()
         {
             var genFactory = new GenerationFactory();
-            genFactory.CreateGeneration();
+            var generationZero = genFactory.CreateGeneration();
+            
         }
     }
 }

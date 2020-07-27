@@ -6,7 +6,7 @@ namespace GreenVsRed
     {
         public Game NewGame()
         {
-            string[] firstLine = Console.ReadLine().Split(new[] { ',', ' '}, StringSplitOptions.RemoveEmptyEntries);
+            string[] firstLine = Console.ReadLine().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int x = int.Parse(firstLine[0]);
             int y = int.Parse(firstLine[1]);
 
@@ -16,11 +16,11 @@ namespace GreenVsRed
                 string row = Console.ReadLine().Trim();
                 for (int j = 0; j < x; j++)
                 {
-                    grid[j, i] = row[i] - '0';
+                    grid[j, i] = row[j] - '0';
                 }
             }
 
-            string[] lastLine = Console.ReadLine().Split(new[] { ',', ' '}, StringSplitOptions.RemoveEmptyEntries);
+            string[] lastLine = Console.ReadLine().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int x1 = int.Parse(lastLine[0]);
             int y1 = int.Parse(lastLine[1]);
             int turns = int.Parse(lastLine[2]);

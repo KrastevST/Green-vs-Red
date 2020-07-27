@@ -2,7 +2,7 @@
 
 namespace GreenVsRed
 {
-    public class Generation
+    public class Game
     {
         const int green = 1;
         const int red = 0;
@@ -14,7 +14,7 @@ namespace GreenVsRed
         private int y1;
         private int turns;
 
-        public Generation(int x, int y, int[,] genZero, int x1, int y1, int turns)
+        public Game(int x, int y, int[,] genZero, int x1, int y1, int turns)
         {
             this.x = x;
             this.y = y;
@@ -24,12 +24,24 @@ namespace GreenVsRed
             this.turns = turns;
         }
 
-        public void Run()
+        public int Start()
         {
+            int count = 0;
+            if (grid[x1, y1] == green)
+            {
+                count++;
+            }
+
             for (int i = 0; i < this.turns; i++)
             {
-
+                nextTurn();
+                if (grid[x1, y1] == green)
+                {
+                    count++;
+                }
             }
+
+            return count;
         }
 
         private void nextTurn()
@@ -100,37 +112,41 @@ namespace GreenVsRed
             if (x - 1 >= 0 && grid[x - 1, y] == color)
             {
                 count++;
-                if (y - 1 >= 0 && grid[x - 1, y - 1] == color)
-                {
-                    count++;
-                }
             }
 
             if (y - 1 >= 0 && grid[x, y - 1] == color)
             {
                 count++;
-                if (x + 1 < this.x && grid[x + 1, y - 1] == color)
-                {
-                    count++;
-                }
             }
 
             if (x + 1 < this.x && grid[x + 1, y] == color)
             {
                 count++;
-                if (y + 1 < this.y && grid[x + 1, y + 1] == color)
-                {
-                    count++;
-                }
             }
 
             if (y + 1 < this.y && grid[x, y + 1] == color)
             {
                 count++;
-                if (x - 1 >= 0 && grid[x - 1, y + 1] == color)
-                {
-                    count++;
-                }
+            }
+
+            if (x - 1 >= 0 && y - 1 >= 0 && grid[x - 1, y - 1] == color)
+            {
+                count++;
+            }
+
+            if (x - 1 >= 0 && y + 1 < this.y && grid[x - 1, y + 1] == color)
+            {
+                count++;
+            }
+
+            if (x + 1 < this.x && y - 1 >= 0 && grid[x + 1, y - 1] == color)
+            {
+                count++; 
+            }
+
+            if (x + 1 < this.x && y + 1 < this.y && grid[x + 1, y + 1] == color)
+            {
+                count++;
             }
 
             return count;

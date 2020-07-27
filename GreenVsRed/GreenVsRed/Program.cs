@@ -8,6 +8,8 @@ namespace GreenVsRed
         {
             var gameFactory = new GameFactory();
             var game = gameFactory.NewGame();
+            int result = game.Start();
+            Console.WriteLine(result);
             
         }
     }

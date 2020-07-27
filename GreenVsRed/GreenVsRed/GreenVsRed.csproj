@@ -43,8 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Generation.cs" />
-    <Compile Include="GenerationFactory.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

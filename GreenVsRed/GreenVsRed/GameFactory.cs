@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Contracts;
+using System;
 
 namespace GreenVsRed
 {
-    public class GameFactory
+    public class GameFactory : IGameFactory
     {
-        public Game NewGame()
+        public IGame NewGame()
         {
             string[] firstLine = Console.ReadLine().Split(new[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
             int x = int.Parse(firstLine[0]);

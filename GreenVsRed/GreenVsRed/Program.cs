@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contracts;
+using System;
 
 namespace GreenVsRed
 {
@@ -6,8 +7,8 @@ namespace GreenVsRed
     {
         static void Main()
         {
-            var gameFactory = new GameFactory();
-            var game = gameFactory.NewGame();
+            IGameFactory gameFactory = new GameFactory();
+            IGame game = gameFactory.NewGame();
             int result = game.Start();
             Console.WriteLine(result);
             

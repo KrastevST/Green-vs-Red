@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Contracts;
 
 namespace GreenVsRed
 {
-    public class Game
+    public class Game : IGame
     {
         const int green = 1;
         const int red = 0;
